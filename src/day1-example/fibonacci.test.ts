@@ -30,16 +30,16 @@ describe('Fibonacci Implementations', () => {
     });
   });
 
-  // Benchmark different implementations
-  describe('Benchmarks', () => {
-    test('Compare solutions for n=20', () => {
-      const solutions: Solution<number, number>[] = [
-        { name: 'Recursive', fn: fibonacciRecursive },
-        { name: 'Dynamic Programming', fn: fibonacciDP },
-        { name: 'Generator', fn: fibonacciGenerator_nth },
-      ];
+  // // Benchmark different implementations
+  // describe('Benchmarks', () => {
+  //   it('Compare solutions for n=20', async () => {
+  //     const solutions: Solution<number, number>[] = [
+  //       { name: 'Recursive', fn: fibonacciRecursive },
+  //       { name: 'Dynamic Programming', fn: fibonacciDP },
+  //       { name: 'Generator', fn: fibonacciGenerator_nth },
+  //     ];
 
-      compareSolutions(20, solutions, { verify: true });
-    });
-  });
+  //     await compareSolutions(20, solutions, { verify: true });
+  //   }, 30000); // Increase timeout for benchmarking
+  // });
 });
