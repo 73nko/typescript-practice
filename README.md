@@ -16,21 +16,26 @@ src/
 ## Getting Started
 
 1. Install dependencies:
+
    ```bash
    npm install
    ```
 
 2. Create a new challenge:
+
    ```bash
    npm run new <challenge-name>  # e.g., npm run new matrix
    ```
+
    This will create a new directory with the next available day number (e.g., `day2-matrix`) containing:
+
    - Main implementation file
    - Test file with benchmarks
    - Basic scaffold for multiple solutions
    - TypeScript types and benchmarking setup
 
 3. Run tests:
+
    ```bash
    npm test          # Run all tests once
    npm run test:watch # Run tests in watch mode
@@ -47,9 +52,11 @@ src/
 You can run challenges in two ways:
 
 1. Run the main implementation:
+
    ```bash
    npm run day <number>   # Run specific day (e.g., npm run day 1)
    ```
+
    This will execute the `main()` function of any challenge matching `day<number>-*`
 
 2. Run the tests for a specific day:
@@ -58,6 +65,7 @@ You can run challenges in two ways:
    ```
 
 For example, running day 1 (Fibonacci example):
+
 ```bash
 npm run day 1    # Runs the implementation with benchmarks
 npm run test:day 1  # Runs the test suite
@@ -68,10 +76,13 @@ Each challenge should export a `main()` function that demonstrates the solution 
 ## Creating a New Practice Problem
 
 1. Create a new challenge:
+
    ```bash
    npm run new <challenge-name>
    ```
+
    This automatically:
+
    - Creates a directory with the next day number
    - Sets up implementation and test files
    - Adds TypeScript types and benchmarking boilerplate
@@ -83,6 +94,7 @@ Each challenge should export a `main()` function that demonstrates the solution 
    - Add test cases
 
 Example implementation structure:
+
 ```typescript
 import { compareSolutions, Solution } from '../utils/benchmark';
 
@@ -143,17 +155,45 @@ compareSolutions(testInput, solutions, { verify: true });
 
 ## Code Quality Tools
 
+### Git Hooks
+
+The project uses Husky and lint-staged to ensure code quality before commits and pushes:
+
+#### Pre-commit Hook
+
+Runs automatically before each commit:
+
+- Formats changed files with Prettier
+- Fixes ESLint issues when possible
+- Runs tests related to changed files
+
+#### Pre-push Hook
+
+Runs automatically before pushing to remote:
+
+- Runs TypeScript type checking
+- Runs all tests
+
+These hooks help maintain code quality by:
+
+- Preventing commits with formatting issues
+- Catching type errors before they reach the repository
+- Ensuring tests pass for changed code
+- Maintaining consistent code style
+
 ### Linting and Formatting
 
 The project uses ESLint and Prettier to ensure consistent code style and catch potential issues:
 
 1. Run linting:
+
    ```bash
    npm run lint        # Check for linting issues
    npm run lint:fix    # Fix automatic linting issues
    ```
 
 2. Run formatting:
+
    ```bash
    npm run format      # Format all files
    npm run format:check # Check if files are formatted
