@@ -14,7 +14,8 @@
     "clean": "rm -rf dist",
     "benchmark": "ts-node",
     "day": "ts-node scripts/run-challenge.ts",
-    "test:day": "jest src/day*-*/**.test.ts"
+    "test:day": "jest src/day*-*/**.test.ts",
+    "new": "ts-node scripts/create-challenge.ts"
   },
   "keywords": [],
   "author": "",

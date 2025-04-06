@@ -20,13 +20,23 @@ src/
    npm install
    ```
 
-2. Run tests:
+2. Create a new challenge:
+   ```bash
+   npm run new <challenge-name>  # e.g., npm run new matrix
+   ```
+   This will create a new directory with the next available day number (e.g., `day2-matrix`) containing:
+   - Main implementation file
+   - Test file with benchmarks
+   - Basic scaffold for multiple solutions
+   - TypeScript types and benchmarking setup
+
+3. Run tests:
    ```bash
    npm test          # Run all tests once
    npm run test:watch # Run tests in watch mode
    ```
 
-3. Build the project:
+4. Build the project:
    ```bash
    npm run build          # Build once
    npm run build:watch    # Build in watch mode
@@ -44,7 +54,7 @@ You can run challenges in two ways:
 
 2. Run the tests for a specific day:
    ```bash
-   npm run test:day <number>`: Run tests for specific day
+   npm run test:day <number>  # Run tests for specific day
    ```
 
 For example, running day 1 (Fibonacci example):
@@ -57,11 +67,20 @@ Each challenge should export a `main()` function that demonstrates the solution 
 
 ## Creating a New Practice Problem
 
-1. Create a new directory under `src/` for your problem (e.g., `src/day2-problem-name/`)
-2. Create your implementation file (e.g., `solution.ts`)
-3. Create a test file (e.g., `solution.test.ts`)
-4. Implement different solutions and use the benchmarking utility to compare them
-5. Export a `main()` function to demonstrate your solutions
+1. Create a new challenge:
+   ```bash
+   npm run new <challenge-name>
+   ```
+   This automatically:
+   - Creates a directory with the next day number
+   - Sets up implementation and test files
+   - Adds TypeScript types and benchmarking boilerplate
+
+2. Navigate to the created directory and:
+   - Add your problem description
+   - Update Input and Output types
+   - Implement your solutions
+   - Add test cases
 
 Example implementation structure:
 ```typescript
