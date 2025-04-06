@@ -11,9 +11,7 @@ if (!dayArg) {
 // Extract the day number from the argument
 const dayMatch = dayArg.match(/^(\d+)/);
 if (!dayMatch) {
-  console.error(
-    'Invalid day format. Use a number or number-* pattern (e.g., "2" or "2-*")'
-  );
+  console.error('Invalid day format. Use a number or number-* pattern (e.g., "2" or "2-*")');
   process.exit(1);
 }
 
@@ -36,9 +34,7 @@ challengeDirs.forEach((dir) => {
   const files = fs.readdirSync(dir);
   const mainFile = files.find(
     (f) =>
-      !f.includes('.test.') &&
-      !f.includes('.spec.') &&
-      (f.endsWith('.ts') || f.endsWith('.js'))
+      !f.includes('.test.') && !f.includes('.spec.') && (f.endsWith('.ts') || f.endsWith('.js')),
   );
 
   if (!mainFile) {

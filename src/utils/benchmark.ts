@@ -11,7 +11,7 @@ export function compareSolutions<T, R>(
   options: {
     verify?: boolean;
     onComplete?: (results: string) => void;
-  } = {}
+  } = {},
 ): void {
   const suite = new Benchmark.Suite();
 

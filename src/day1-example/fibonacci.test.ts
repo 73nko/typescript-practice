@@ -1,8 +1,4 @@
-import {
-  fibonacciRecursive,
-  fibonacciDP,
-  fibonacciGenerator_nth,
-} from './fibonacci';
+import { fibonacciRecursive, fibonacciDP, fibonacciGenerator_nth } from './fibonacci';
 import { compareSolutions, Solution } from '../utils/benchmark';
 
 describe('Fibonacci Implementations', () => {
@@ -17,30 +13,21 @@ describe('Fibonacci Implementations', () => {
 
   // Test each implementation separately
   describe('Recursive Implementation', () => {
-    test.each(testCases)(
-      'fibonacci($input) = $expected',
-      ({ input, expected }) => {
-        expect(fibonacciRecursive(input)).toBe(expected);
-      }
-    );
+    test.each(testCases)('fibonacci($input) = $expected', ({ input, expected }) => {
+      expect(fibonacciRecursive(input)).toBe(expected);
+    });
   });
 
   describe('Dynamic Programming Implementation', () => {
-    test.each(testCases)(
-      'fibonacci($input) = $expected',
-      ({ input, expected }) => {
-        expect(fibonacciDP(input)).toBe(expected);
-      }
-    );
+    test.each(testCases)('fibonacci($input) = $expected', ({ input, expected }) => {
+      expect(fibonacciDP(input)).toBe(expected);
+    });
   });
 
   describe('Generator Implementation', () => {
-    test.each(testCases)(
-      'fibonacci($input) = $expected',
-      ({ input, expected }) => {
-        expect(fibonacciGenerator_nth(input)).toBe(expected);
-      }
-    );
+    test.each(testCases)('fibonacci($input) = $expected', ({ input, expected }) => {
+      expect(fibonacciGenerator_nth(input)).toBe(expected);
+    });
   });
 
   // Benchmark different implementations

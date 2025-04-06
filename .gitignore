@@ -26,3 +26,6 @@ coverage/
 
 # Debug logs
 debug.log*
+
+# ESLint cache
+.eslintcache

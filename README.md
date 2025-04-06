@@ -140,3 +140,43 @@ compareSolutions(testInput, solutions, { verify: true });
 - `npm run clean`: Remove build artifacts
 - `npm run day <number>`: Run specific day's challenge
 - `npm run test:day <number>`: Run tests for specific day
+
+## Code Quality Tools
+
+### Linting and Formatting
+
+The project uses ESLint and Prettier to ensure consistent code style and catch potential issues:
+
+1. Run linting:
+   ```bash
+   npm run lint        # Check for linting issues
+   npm run lint:fix    # Fix automatic linting issues
+   ```
+
+2. Run formatting:
+   ```bash
+   npm run format      # Format all files
+   npm run format:check # Check if files are formatted
+   ```
+
+3. Run all checks (format, lint, and test):
+   ```bash
+   npm run check
+   ```
+
+### ESLint Rules
+
+- Strict TypeScript checks enabled
+- No explicit `any` types allowed
+- Explicit return types required
+- Consistent code style with Prettier
+- Console logs are warned (except warn/error)
+- Unused variables are not allowed
+
+### Prettier Configuration
+
+- Single quotes
+- 100 characters line length
+- 2 spaces indentation
+- Trailing commas
+- Semicolons required

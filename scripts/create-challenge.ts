@@ -92,10 +92,7 @@ describe('${challengeName}', () => {
 });`;
 
 fs.writeFileSync(path.join(dirPath, `${challengeName}.ts`), mainFileContent);
-fs.writeFileSync(
-  path.join(dirPath, `${challengeName}.test.ts`),
-  testFileContent
-);
+fs.writeFileSync(path.join(dirPath, `${challengeName}.test.ts`), testFileContent);
 
 console.log(`Created new challenge in ${dirPath}`);
 console.log('Files created:');
